@@ -1,5 +1,5 @@
-import { Avatar } from "../Avatar"
 import Image from "next/image"
+import { Avatar } from "../Avatar"
 
 export const CardPost = ({ post }) => {
     return (
@@ -7,8 +7,11 @@ export const CardPost = ({ post }) => {
             <header>
                 <figure>
                     <Image 
-                    src={post.cover} width={438} height={133} 
-                    alt={`capa do post de titulo: ${post.title}`}/>
+                        src={post.cover} 
+                        width={438} 
+                        height={133} 
+                        alt={`Capa do post de titulo: ${post.title}`} 
+                    />
                 </figure>
             </header>
             <section>
@@ -16,8 +19,8 @@ export const CardPost = ({ post }) => {
                 <p>{post.body}</p>
             </section>
             <footer>
-                <Avatar
-                    imageSrc={post.author.Avatar}
+                <Avatar 
+                    imageSrc={post.author.avatar} 
                     name={post.author.username}
                 />
             </footer>
