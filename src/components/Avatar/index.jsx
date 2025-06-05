@@ -4,7 +4,7 @@ export const Avatar = ({name, imageSrc}) =>{
     return(
         <ul>
             <li>
-                <Image src={imageSrc}/>
+                <Image src={imageSrc} width={32} height={32} alt={`imagem do(a) ${name.Avatar}`} />
             </li>
             <li>
                @{name}
