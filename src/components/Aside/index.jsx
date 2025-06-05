@@ -8,4 +8,4 @@ export const Aside = () => {
             <Image src={logo} alt="Logo do Code Connect" />
         </aside>
     )
-}
+} 
