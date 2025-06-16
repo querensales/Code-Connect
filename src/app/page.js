@@ -2,8 +2,8 @@ import { CardPost } from "@/components/CardPost"
 import styles from './page.module.css'
 import logger from "@/logger";
 
-async function getAllPosts() {
-  const response = await fetch("http://localhost:3042/posts");
+async function getAllPosts(page) {
+  const response = await fetch(`http://localhost:3042/posts?_page=${page}&_per_page=6`);
   console.log(response);
   if (!response.ok) {
     logger.error("Ops! Algo deu errado.");
@@ -12,11 +12,12 @@ async function getAllPosts() {
   return response.json();
 }
 
+
 export default async function Home() {
-  const posts = await getAllPosts();
+  const {data: posts} = await getAllPosts(1);
   return (
     <main className={styles.grid}>
-      {posts.map(post => <CardPost post={post} />)}
+      {posts.map(post => <CardPost key={post.id} post={post} />)}
     </main>
   );
 }
