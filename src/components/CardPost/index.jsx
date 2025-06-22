@@ -4,6 +4,7 @@ import styles from './cardpost.module.css'
 import Link from "next/link"
 
 export const CardPost = ({ post }) => {
+    console.log('CardPost kleber', post)
     return (
         <Link href={`/posts/${post.id}`} className={styles.link}>
             <article className={styles.card}>
